@@ -1,0 +1,12 @@
+.todo-description {
+  border: none;
+}
+
+.inputvalue:focus,
+.todo-description:focus {
+  outline: none;
+}
+
+.inputvalue.active {
+  outline: 0.5px black solid;
+}
