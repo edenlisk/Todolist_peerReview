@@ -83,13 +83,17 @@ class ToDoListClass {
     trash.addEventListener('click', () => {
       todoList.removeChild(trash.parentElement.parentElement);
       this.toDoInfo.splice(index, 1);
-      this.toDoInfo.forEach((task) => {
-        if (task.index > index) {
-          task.index -= 1;
-        }
-      });
+      this.updateIndex();
       localStorage.setItem('todo', JSON.stringify(this.toDoInfo));
       window.location.reload();
+    });
+  }
+
+  updateIndex() {
+    this.toDoInfo.forEach((task, index) => {
+      if (task.index !== index) {
+        task.index = index;
+      }
     });
   }
 }
