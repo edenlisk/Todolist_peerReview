@@ -25,7 +25,7 @@ export default class Interactive {
     removeCompleted.addEventListener('click', () => {
       this.toDoList = this.toDoList.filter((task) => task.completed !== true);
       localStorage.setItem('todo', JSON.stringify(this.toDoList));
-      this.updateIndex()
+      this.updateIndex();
       localStorage.setItem('todo', JSON.stringify(this.toDoList));
       window.location.reload();
     });
